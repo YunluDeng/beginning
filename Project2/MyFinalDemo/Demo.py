@@ -2,7 +2,7 @@ import GoogleApi as GA
 import record as Twitter
 import os
 
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r"C:\Users\111\Desktop\project2\Final\savvy-mantis-327220-32c9708cc2b6.json"
+os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r"savvy-mantis-327220-32c9708cc2b6.json"
 print("Welcome to my social media analyzer")
 print("Please choose and type Twitter or Google")
 a = input("Please choose your survice:")
