@@ -1,4 +1,4 @@
-from tweepy.models import Place
+##from tweepy.models import Place
 import GoogleApi as GA
 import record as Twitter
 import os
