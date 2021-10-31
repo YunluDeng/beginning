@@ -20,18 +20,18 @@ def deEmojify(text):
 
 def TwitAly(text1):
     # 1. Authenticate
-    # CONSUMER_KEY = "Please enter key"
-    # CONSUMER_SECRET = "Please enter secret"
-    # ACCESS_TOKEN = "please enter token"
-    # ACCESS_TOKEN_SECRET = "please enter token secret"
-    auth = tweepy.OAuthHandler(os.getenv('CONSUMER_KEY'),
-                            os.getenv('CONSUMER_SECRET'))
-    auth.set_access_token(os.getenv('ACCESS_TOKEN'),
-                        os.getenv('ACCESS_TOKEN_SECRET'))
-    # auth = tweepy.OAuthHandler(CONSUMER_KEY,
-    #                             CONSUMER_SECRET)
-    # auth.set_access_token(ACCESS_TOKEN,
-    #                         ACCESS_TOKEN_SECRET)
+    CONSUMER_KEY = os.environ['CONSUMER_KEY']
+    CONSUMER_SECRET = os.environ['CONSUMER_SECRET']
+    ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
+    ACCESS_TOKEN_SECRET = os.environ['ACCESS_TOKEN_SECRET']
+#     auth = tweepy.OAuthHandler(os.getenv('CONSUMER_KEY'),
+#                             os.getenv('CONSUMER_SECRET'))
+#     auth.set_access_token(os.getenv('ACCESS_TOKEN'),
+#                         os.getenv('ACCESS_TOKEN_SECRET'))
+    auth = tweepy.OAuthHandler(CONSUMER_KEY,
+                                CONSUMER_SECRET)
+    auth.set_access_token(ACCESS_TOKEN,
+                            ACCESS_TOKEN_SECRET)
     api = tweepy.API(auth)
 
     if (not api):
