@@ -30,6 +30,9 @@ jobs:
       - name: install google-cloud-language
         run:
           pip3 install --user --upgrade google-cloud-language
+          
+      - name: install tweepy
+        run:
           pip3 install tweepy
           
       - name: execute py script # run the run.py to get the latest data
