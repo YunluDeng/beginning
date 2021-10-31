@@ -39,8 +39,7 @@ def TwitAly(text1):
         sys.exit(-1)
 
         # 2. Get data
-    data = api.user_timeline(text1, tweet_mode="extended",
-                                count=200, exclude_replies=True)
+    data = api.user_timeline(text1, tweet_mode="extended", count=200, exclude_replies=True)
         # 3. Save data
     x = ""
     with open('elon_tweets.csv', mode='w', encoding='utf-8', newline='') as csv_file:
