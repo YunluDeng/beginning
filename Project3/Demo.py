@@ -7,7 +7,8 @@ import os
 #os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r"C:\Users\111\Desktop\project2\Final\grand-bank-330020-d28baa368690.json"
 print("Welcome to my social media analyzer")
 print("We can help you get the tweets and explain them based on the username you given.")
-text2 = input("Please enter the Username you are looking for:")
+#text2 = input("Please enter the Username you are looking for:")
+text2 = os.environ('Username')
 GA.analyze_text_sentiment(Twitter.TwitAly(text2))
 GA.analyze_text_entities(Twitter.TwitAly(text2))
 GA.analyze_text_syntax(Twitter.TwitAly(text2))
