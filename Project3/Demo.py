@@ -4,7 +4,7 @@ import record as Twitter
 import os
 ####1.Enable the project after producing####
 ####2.Change the path in line 6, os.environ####
-os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r"C:\Users\111\Desktop\project2\Final\grand-bank-330020-d28baa368690.json"
+#os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r"C:\Users\111\Desktop\project2\Final\grand-bank-330020-d28baa368690.json"
 print("Welcome to my social media analyzer")
 print("We can help you get the tweets and explain them based on the username you given.")
 text2 = input("Please enter the Username you are looking for:")
