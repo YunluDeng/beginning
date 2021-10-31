@@ -33,7 +33,7 @@ jobs:
           
       - name: install tweepy
         run:
-          pip3 install tweepy
+          pip3 install tweepy==3.10.0
           
       - name: install dotenv
         run:         
