@@ -1,3 +1,4 @@
+
 import tweepy
 import sys
 import os
@@ -20,27 +21,30 @@ def deEmojify(text):
 
 def TwitAly(text1):
     # 1. Authenticate
-    # CONSUMER_KEY = "Please enter key"
-    # CONSUMER_SECRET = "Please enter secret"
-    # ACCESS_TOKEN = "please enter token"
-    # ACCESS_TOKEN_SECRET = "please enter token secret"
-    auth = tweepy.OAuthHandler(os.getenv('CONSUMER_KEY'),
-                            os.getenv('CONSUMER_SECRET'))
-    auth.set_access_token(os.getenv('ACCESS_TOKEN'),
-                        os.getenv('ACCESS_TOKEN_SECRET'))
-    # auth = tweepy.OAuthHandler(CONSUMER_KEY,
-    #                             CONSUMER_SECRET)
-    # auth.set_access_token(ACCESS_TOKEN,
-    #                         ACCESS_TOKEN_SECRET)
-    api = tweepy.API(auth)
+    CONSUMER_KEY = os.environ['CONSUMER_KEY']
+    CONSUMER_SECRET = os.environ['CONSUMER_SECRET']
+    ACCESS_TOKEN = os.environ['ACCESS_TOKEN']
+    ACCESS_TOKEN_SECRET = os.environ['ACCESS_TOKEN_SECRET']
+    print(CONSUMER_KEY)
+    print(CONSUMER_SECRET)
+    print(ACCESS_TOKEN)
+    print(ACCESS_TOKEN_SECRET)
+#     auth = tweepy.OAuthHandler(os.getenv('CONSUMER_KEY'),
+#                             os.getenv('CONSUMER_SECRET'))
+#     auth.set_access_token(os.getenv('ACCESS_TOKEN'),
+#                         os.getenv('ACCESS_TOKEN_SECRET'))
+    auth = tweepy.OAuthHandler(CONSUMER_KEY,
+                                CONSUMER_SECRET)
+    auth.set_access_token(ACCESS_TOKEN,
+                            ACCESS_TOKEN_SECRET)
+    api = tweepy.API(auth, wait_on_rate_limit=True, wait_on_rate_limit_notify=True)
 
     if (not api):
         print("Authentication failed!")
         sys.exit(-1)
 
         # 2. Get data
-    data = api.user_timeline(text1, tweet_mode="extended",
-                                count=200, exclude_replies=True)
+    data = api.user_timeline(text1, tweet_mode="extended", count=200, exclude_replies=True)
         # 3. Save data
     x = ""
     with open('elon_tweets.csv', mode='w', encoding='utf-8', newline='') as csv_file:
