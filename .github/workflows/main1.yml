@@ -26,10 +26,13 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: 3.8 #install the python needed
-
+        
+      - name: install google-cloud-language
+        run:
+          pip3 install --user --upgrade google-cloud-language
+          
       - name: execute py script # run the run.py to get the latest data
         run: 
-          pip3 install --user --upgrade google-cloud-language
           python Project3/Demo.py
         env:
           ACCESS_TOKEN: ${{ secrets.ACCESS_TOKEN }}
