@@ -1,3 +1,2 @@
-Since for the security problems, I can not put my twitter secrect keys and google NLP security document in this open- source code.
-It will cause that the program can not be run properly.
-Professor, or any other graders, If there are any problems for that, please contact with me, yldeng@bu.edu, I can offer you my credential.
+I have put my twitter keys and google license in the secret.
+The name is the same as what it is in the code, like CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET
